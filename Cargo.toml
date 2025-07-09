@@ -1,0 +1,48 @@
+[workspace]
+members = [".", "migration", "entities"]
+resolver = "2"
+
+[package]
+name = "dog-bot-template"
+version = "0.1.0"
+edition = "2024"
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemalloc-ctl = { version = "0.6", features = ["stats", "use_std"] }
+tikv-jemallocator = "0.6"
+
+
+[dependencies]
+entities = { path = "entities" }
+migration = { path = "migration" }
+arc-swap = "1"
+chrono = "0.4"
+clap = { version = "4", features = ["derive"] }
+const_format = { version = "0.2", features = ["rust_1_83"] }
+figment = { version = "0.10", features = ["env", "json"] }
+futures = "0.3"
+itertools = "0.14"
+owo-colors = "4"
+poise = "0.6"
+rand = "0.9"
+rand_distr = "0.5"
+sea-orm = { version = "1", features = ["sqlx-sqlite", "runtime-tokio"] }
+reqwest = { version = "0.12", default-features = false, features = [
+    "json",
+    "rustls-tls",
+] }
+serde = { version = "1", features = ["derive"] }
+serenity = { version = "0.12", features = [
+    "temp_cache",
+    "collector",
+    "interactions_endpoint",
+    "simd_json",
+] }
+snafu = { version = "0.8", features = ["rust_1_81"] }
+sysinfo = "0.35"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "chrono"] }
+serde_with = "3"
+compile-time = "0.2"
+dashmap = "6"

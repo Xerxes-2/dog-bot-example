@@ -1,0 +1,6 @@
+target/
+config.json
+.sqlx
+sqlite.*
+.vscode
+CLAUDE.md
