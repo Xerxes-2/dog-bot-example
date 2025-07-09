@@ -54,7 +54,7 @@ dog-bot-example/
 │   │   └── messages.rs      # 消息管理
 │   └── utils/               # 工具函数和辅助模块
 │       ├── mod.rs           # 工具模块导出
-│       └── children.rs      # 子进程管理工具
+│       └── children.rs      # 子频道管理工具
 ├── entities/                # 数据库实体定义 (Sea-ORM)
 │   ├── Cargo.toml
 │   └── src/
@@ -533,7 +533,7 @@ CMD ["dog-bot-template"]
 A: 检查配置文件中的 `token` 字段，确保使用正确的 Bot Token
 
 **Q: 斜杠命令不显示**
-A: 确保 Bot 有 `applications.commands` 权限，并运行 `/register` 命令
+A: 确保 Bot 有 `applications.commands` 权限，并运行 `register` 命令
 
 **Q: 数据库连接失败**
 A: 检查 SQLite 文件权限，确保 Bot 有读写权限
